@@ -50,8 +50,8 @@
                   <span v-if="borrower.status == 'Returned' " class="badge badge-success">{{borrower.status}}</span>
                 </td>
                 <td role="cell" aria-colindex="6" class=""> {{borrower.created_at}} </td>
-                <td role="cell" aria-colindex="7" class=""> {{borrower.updated_at}}</td>
-
+                <td role="cell" v-if="borrower.status == 'Returned' " aria-colindex="7" class=""> {{borrower.updated_at}}</td>
+                <td role="cell" v-if="borrower.status == 'Borrowed' " aria-colindex="7" class=""> </td>
                 <td role="cell" v-if="borrower.status == 'Borrowed' " aria-colindex="7" class="" @click="markReturned(borrower.id)"> Mark Returned</td>
                 <td role="cell" v-if="borrower.status == 'Returned' " aria-colindex="7" class=""> </td>
 
